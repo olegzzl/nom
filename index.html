@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061f30">
+  <meta name="description" content="Неоорбитальная медитация — авторская практика внимания, мантры и внутренней тишины. Онлайн-знакомство с практикой Олега.">
+  <title>Неоорбитальная медитация</title>
+  <link rel="icon" href="assets/neo-orbital-enso-header.webp" type="image/webp">
+  <link rel="preload" href="assets/neo-orbital-enso-header.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" id="skip" href="#main-content" data-i18n="skip">Перейти к содержимому</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Neo Orbital Meditation — home">
+      <span>N</span><span class="brand-orbit">O</span><span>M</span>
+    </a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Основная навигация">
+      <ul id="nav-list"></ul>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Language / Язык">
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+        <button type="button" data-language="ru" aria-pressed="true">RU</button>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true">
+        <img class="hero-image" src="assets/neo-orbital-enso-header.webp" alt="" fetchpriority="high">
+        <div class="hero-shade"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-eyebrow">О практике</p>
+        <h1 id="hero-title">Неоорбитальная медитация</h1>
+        <p class="hero-tagline" id="hero-tagline">Древняя практика. Современное спокойствие.</p>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <div class="hero-buttons" id="hero-buttons"></div>
+        <a class="scroll-cue" href="#practice" aria-label="Перейти к практике"><span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <section class="content-section intro-section" id="practice" aria-labelledby="intro-title">
+        <p class="section-kicker" id="practice-kicker">Неоорбитальная медитация</p>
+        <h2 id="intro-title">Тишина в уме</h2>
+        <p class="lead" id="welcome"></p>
+        <div class="prose" id="intro-paragraphs"></div>
+      </section>
+
+      <section class="content-section mantra-section" id="mantra" aria-labelledby="mantra-title">
+        <div class="section-marker" aria-hidden="true">01</div>
+        <div class="section-copy">
+          <p class="section-kicker" id="mantra-kicker">Главное в практике</p>
+          <h2 id="mantra-title">Слово только для тебя</h2>
+          <p class="lead" id="mantra-copy"></p>
+        </div>
+      </section>
+
+      <section class="content-section benefits-section" id="benefits" aria-labelledby="benefits-title">
+        <p class="section-kicker" id="benefits-kicker">Мягко и без напряжения</p>
+        <h2 id="benefits-title">Что дает практика</h2>
+        <ul class="benefit-list" id="benefits-list"></ul>
+      </section>
+
+      <div class="extra-sections" id="extra-sections"></div>
+
+      <section class="manifest-section" id="contact" aria-labelledby="manifest-text">
+        <div class="manifest-banner">
+          <p class="manifest-text" id="manifest-text">Сделано для тех, кто устал от тревог, хочет быстро успокоиться, перезагрузить ум, расслабить тело, не тратя на это долгие часы в позе лотоса, и хочет практиковать проверенный метод здесь и сейчас.</p>
+        </div>
+        <div class="contact-email-wrap">
+          <a class="contact-email-link" id="contact-email" href="mailto:olegzzl@zohomail.eu">olegzzl@zohomail.eu</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#top" id="footer-brand">Неоорбитальная медитация</a>
+    <p class="footer-note" id="footer-note">Практика тишины, внимания и контакта с телом.</p>
+    <a class="back-to-top" href="#top" aria-label="Наверх">↑</a>
+  </footer>
+</body>
+</html>
