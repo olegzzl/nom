@@ -24,14 +24,14 @@ a { color: inherit; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 .skip-link { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 8px 14px; transform: translateY(-160%); background: var(--ivory); color: var(--night); }
 .skip-link:focus { transform: translateY(0); }
-.site-header { height: 88px; position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 0 clamp(20px, 5vw, 72px); background: rgba(4, 28, 43, .98); border-bottom: 1px solid var(--line); }
-.brand { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 3px; text-decoration: none; font-size: 34px; line-height: 1; letter-spacing: .11em; }
+.site-header { height: 88px; position: relative; z-index: 20; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 clamp(20px, 4vw, 56px); background: rgba(4, 28, 43, .98); border-bottom: 1px solid var(--line); }
+.brand { justify-self: start; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 3px; text-decoration: none; font-size: 34px; line-height: 1; letter-spacing: .11em; }
 .brand-orbit { width: 45px; height: 45px; display: inline-grid; place-items: center; margin: 0 -3px; border: 1px solid var(--gold); border-radius: 50%; color: var(--ivory); font-size: .9em; letter-spacing: 0; }
-.primary-nav { margin-left: auto; }
-.primary-nav ul { list-style: none; display: flex; align-items: center; gap: clamp(12px, 2.1vw, 32px); margin: 0; padding: 0; }
-.primary-nav a { display: inline-block; padding: 8px 0; color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s ease; }
+.primary-nav { justify-self: center; margin: 0; }
+.primary-nav ul { list-style: none; display: flex; align-items: center; justify-content: center; gap: clamp(10px, 1.8vw, 28px); margin: 0; padding: 0; }
+.primary-nav a { display: inline-block; padding: 8px 2px; color: var(--muted); font-size: 14.5px; text-decoration: none; transition: color .2s ease; white-space: nowrap; }
 .primary-nav a:hover, .primary-nav a:focus-visible { color: var(--ivory); }
-.header-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 20px; }
+.header-actions { justify-self: end; display: flex; flex: 0 0 auto; align-items: center; gap: 20px; }
 .language-switch { display: flex; align-items: center; gap: 20px; }
 .language-switch button { position: relative; border: 0; padding: 8px 0; background: transparent; color: var(--muted); cursor: pointer; letter-spacing: .12em; }
 .language-switch button[aria-pressed="true"] { color: var(--ivory); }
@@ -84,13 +84,14 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
 [hidden] { display: none !important; }
 @media (min-width: 1500px) { .hero-copy { padding-top: 640px; } }
 @media (max-width: 900px) {
-  .site-header { height: 76px; gap: 18px; padding: 0 22px; }
-  .brand { font-size: 29px; }
+  .site-header { display: flex; justify-content: space-between; height: 76px; gap: 18px; padding: 0 22px; }
+  .brand { justify-self: auto; font-size: 29px; }
   .brand-orbit { width: 39px; height: 39px; }
-  .primary-nav { display: none; position: absolute; top: 100%; right: 0; left: 0; margin: 0; padding: 8px 22px 22px; border-bottom: 1px solid var(--line); background: rgba(4,28,43,.99); }
+  .primary-nav { justify-self: auto; display: none; position: absolute; top: 100%; right: 0; left: 0; margin: 0; padding: 8px 22px 22px; border-bottom: 1px solid var(--line); background: rgba(4,28,43,.99); }
   .primary-nav.is-open { display: block; }
   .primary-nav ul { display: grid; gap: 0; }
-  .primary-nav a { width: 100%; padding: 11px 3px; border-bottom: 1px solid rgba(209,187,126,.12); font-size: 16px; }
+  .primary-nav a { width: 100%; padding: 11px 3px; border-bottom: 1px solid rgba(209,187,126,.12); font-size: 16px; white-space: normal; }
+  .header-actions { justify-self: auto; }
   .menu-toggle { display: block; width: 48px; height: 48px; padding: 11px; }
   .menu-toggle span { margin: 5px 0; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
