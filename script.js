@@ -12,7 +12,7 @@ const pages = {
       "Usually, when we try to guide our attention through the body, the mind carries on with a life of its own. It throws up thoughts, clings to pleasant sensations and leads us astray. A mantra changes this. It gently overloads the brain’s habitual background mode—that inner chatter—and shifts the mind into a different state. Attention moves, and thoughts grow quiet. You become fully immersed in the process."
     ],
     mantraTitle: "A word that is yours alone",
-    mantra: "The main secret of the practice lies in the mantra itself. It needs to be neutral: a word that evokes no images, memories or emotions. That is why there are no universal mantras here. The word is chosen individually, taking into account a person’s character, temperament and even the particularities of their speech. Over time, the person filters out what does not fit. What remains is a word that resonates with them alone. It is not shared with anyone: this keeps it clear and free of associations.",
+    mantra: "The main secret of the practice lies in the mantra itself. It should be neutral — a word that evokes no images, memories, or emotions, which is why there are no universal mantras here. It should be a word that means nothing to you, though you can also use a classic one: Om, Om mani padme hum, or Soham, whichever feels better to you. More details will follow.",
     benefitsTitle: "What the practice offers",
     benefits: ["A pause in unnecessary thoughts and clarity of mind", "Deep relaxation of the body", "A gentle, flowing movement of energy through the body", "Concentration without strain"],
     closing: "The practice is simple and accessible to everyone. All you need is quiet, a comfortable position and a willingness to try.",
@@ -40,7 +40,7 @@ const pages = {
       "Обычно, когда мы пытаемся вести внимание по телу, ум продолжает жить своей жизнью. Он подбрасывает мысли, цепляется за приятные ощущения, уводит в сторону. Мантра меняет это. Она мягко перегружает привычный фоновый режим мозга, ту самую внутреннюю болтовню, и переключает ум в другое состояние. Внимание движется, а мысли затихают. Ты оказываешься целиком внутри процесса."
     ],
     mantraTitle: "Слово только для тебя",
-    mantra: "Главный секрет практики в самой мантре. Она должна быть нейтральной: словом, которое не вызывает ни образов, ни воспоминаний, ни эмоций. Поэтому универсальных мантр здесь не бывает. Слово подбирается индивидуально, с учетом характера, темперамента и даже особенностей речи, и человек постепенно сам отсеивает то, что не подходит. В итоге остается слово, которое звучит только для него. Его не называют никому: так оно остается чистым и ни с чем не связывается.",
+    mantra: "Главный секрет практики в самой мантре. Она должна быть нейтральной, словом, которое не вызывает ни образов, ни воспоминаний, ни эмоций, поэтому универсальных мантр здесь не бывает. Это должно быть слово, которое ничего для вас не значит, но можно и классическую использовать — Ом, или Ом мани падме хум, или Сохам, что для вас приятней. Подробней будет впереди.",
     benefitsTitle: "Что дает практика",
     benefits: ["Остановку лишних мыслей и ясность в голове", "Глубокое расслабление тела", "Мягкое, плавное движение энергии по телу", "Концентрацию без напряжения"],
     manifest: "Сделано для тех, кто устал от тревог, хочет быстро успокоиться, перезагрузить ум, расслабить тело, не тратя на это долгие часы в позе лотоса, и хочет практиковать здесь и сейчас.",
