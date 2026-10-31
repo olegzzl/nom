@@ -91,6 +91,8 @@ function renderNav(lang, copy) {
     { href: "#practice", label: copy.nav[0] },
     { href: "#mantra", label: copy.nav[1] },
     { href: "meditations.html", label: copy.nav[4] },
+    /* Suminigashi не переводится: страница так называется на любом языке */
+    { href: "suminigashi.html", label: "Suminigashi" },
     { href: "#benefits", label: copy.nav[2] },
     ...sections[lang].map((section) => ({ href: `#${section.id}`, label: section.navLabel })),
     { href: "#contact", label: copy.nav[3] }

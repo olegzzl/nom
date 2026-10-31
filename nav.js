@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 /* Единый источник шапки сайта.
    Подключается на всех страницах, чтобы меню не расходилось.
@@ -7,26 +7,34 @@
 (function (global) {
   var MAIN_PAGE = { ru: "index.html", en: "index-en.html", uk: "index-uk.html" };
 
-  /* Подписи пунктов. Порядок одинаковый во всех языках. */
+  /* Подписи пунктов. Порядок одинаковый во всех языках.
+     Suminigashi не переводится: страница так называется на любом языке. */
   var LABELS = {
-    ru: ["О практике", "Техника", "Медитации и техники успокоения", "Контакты"],
-    en: ["The practice", "Technique", "Meditations and calming techniques", "Contact"],
-    uk: ["Про практику", "Техніка", "Медитації й техніки заспокоєння", "Контакти"]
+    ru: ["О практике", "Техника", "Медитации и техники успокоения", "Suminigashi", "Контакты"],
+    en: ["The practice", "Technique", "Meditations and calming techniques", "Suminigashi", "Contact"],
+    uk: ["Про практику", "Техніка", "Медитації й техніки заспокоєння", "Suminigashi", "Контакти"]
   };
 
   /* Куда ведёт каждый пункт: якорь на главной или отдельная страница. */
-  var TARGETS = ["#concept", "#technique", "meditations.html", "#contact"];
+  var TARGETS = ["#concept", "#technique", "meditations.html", "suminigashi.html", "#contact"];
 
-  function items(lang, fromMeditations) {
+  /* Текущая страница — по имени файла в адресе. На главной вернёт null. */
+  function pageFile() {
+    var file = (location.pathname.split("/").pop() || "").toLowerCase();
+    return TARGETS.indexOf(file) >= 0 ? file : null;
+  }
+
+  function items(lang, currentPage) {
     var key = LABELS[lang] ? lang : "ru";
     var base = MAIN_PAGE[key];
+    var secondary = !!currentPage;
     return TARGETS.map(function (target, index) {
       var href = target;
-      if (fromMeditations && target.charAt(0) === "#") href = base + target;
+      if (secondary && target.charAt(0) === "#") href = base + target;
       return {
         label: LABELS[key][index],
         href: href,
-        current: fromMeditations && target === "meditations.html"
+        current: currentPage === target
       };
     });
   }
@@ -35,10 +43,13 @@
     if (!list) return null;
     var opts = options || {};
     var lang = opts.lang || document.documentElement.lang || "ru";
-    var fromMeditations = !!opts.fromMeditations;
+    /* fromMeditations оставляем для старых вызовов, current — универсальный */
+    var current = opts.current !== undefined
+      ? opts.current
+      : (opts.fromMeditations ? "meditations.html" : pageFile());
 
     list.textContent = "";
-    items(lang, fromMeditations).forEach(function (item) {
+    items(lang, current).forEach(function (item) {
       var li = document.createElement("li");
       var a = document.createElement("a");
       a.href = item.href;

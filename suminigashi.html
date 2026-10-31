@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061f30">
+  <meta name="description" content="Suminigashi — чернила на воде: капли, кольца и волокна. Интерактивная практика: проведите по поверхности, и краска поплывёт.">
+  <title>Suminigashi | Неоорбитальная медитация</title>
+  <link rel="icon" href="assets/neo-orbital-enso-header.webp" type="image/webp">
+  <script>
+    /* Язык приходит ссылкой ?lang=xx — страница одна на все три версии сайта. */
+    (function () {
+      var m = /[?&]lang=(ru|en|uk)\b/.exec(location.search);
+      if (m) document.documentElement.lang = m[1];
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css?v=16">
+  <link rel="stylesheet" href="assets/suminigashi/page.css?v=1">
+  <script src="nav.js" defer></script>
+  <script src="assets/suminigashi/shaders.js" defer></script>
+  <script src="assets/suminigashi/fluid.js" defer></script>
+  <script src="assets/suminigashi/page.js" defer></script>
+</head>
+<body class="page-suminigashi">
+  <a class="skip-link" href="#stage">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Neo Orbital Meditation, на главную">
+      <span>N</span><span class="brand-orbit">O</span><span>M</span>
+    </a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Основная навигация">
+      <ul id="nav-list"></ul>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Language / Язык">
+        <a href="suminigashi.html?lang=uk" data-language="uk" hreflang="uk">UA</a>
+        <a href="suminigashi.html?lang=en" data-language="en" hreflang="en">EN</a>
+        <a href="suminigashi.html?lang=ru" data-language="ru" hreflang="ru" aria-current="true">RU</a>
+      </div>
+      <nav class="social social--header" aria-label="Соцсети в шапке">
+        <a href="https://www.youtube.com/@spokum" target="_blank" rel="noopener noreferrer" title="YouTube - @spokum" aria-label="YouTube - @spokum"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+        <a href="https://www.facebook.com/spokum.space" target="_blank" rel="noopener noreferrer" title="Facebook - spokum.space" aria-label="Facebook - spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 20v-7.8h2.6l.4-3h-3V9.3c0-.9.25-1.5 1.55-1.5h1.65V5.1c-.3-.04-1.3-.13-2.45-.13-2.43 0-4.1 1.48-4.1 4.2v2.03H7v3h2.55V22h3.35Z"/></svg></a>
+        <a href="https://www.tiktok.com/@spokum.space" target="_blank" rel="noopener noreferrer" title="TikTok - @spokum.space" aria-label="TikTok - @spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.6 3h-2.7v12.2c0 1.2-.75 2-1.85 2-1 0-1.8-.7-1.8-1.7 0-1.1.9-1.7 2.1-1.5v-2.8c-2.8-.1-4.8 1.7-4.8 4.3 0 2.5 1.9 4.3 4.4 4.3 2.7 0 4.6-2 4.6-4.7V9.9c1 .6 2.1.9 3.3.8V8c-1.9-.3-3-1.7-3.3-3.6V3Z"/></svg></a>
+        <a href="https://www.instagram.com/spokum.space/" target="_blank" rel="noopener noreferrer" title="Instagram - spokum.space" aria-label="Instagram - spokum.space"><svg viewBox="0 0 24 24" style="fill:none" stroke="currentColor" stroke-width="1.9" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg></a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="ink-stage" id="stage">
+    <h1 class="ink-visually-hidden">Suminigashi</h1>
+
+    <canvas id="water" data-tool="brush" role="img"
+            aria-label="Поверхность воды с плавающими чернилами. Проведите курсором или пальцем, чтобы рисовать."></canvas>
+
+    <p class="ink-hint" id="hint" data-i18n="hint">Проведите по воде</p>
+
+    <div class="ink-dock" id="ink-dock">
+      <button class="ink-collapse" id="collapse" type="button"
+              aria-expanded="true" aria-controls="ink-dock-body" data-i18n-aria="collapse"
+              aria-label="Свернуть панель"></button>
+
+      <div class="ink-dock-body" id="ink-dock-body">
+
+        <div class="ink-row ink-row--tools">
+          <div class="ink-tools" role="group" data-i18n-aria="tools" aria-label="Инструмент">
+            <button class="ink-tool is-active" type="button" data-tool="brush" aria-pressed="true" data-i18n="brush">Кисть</button>
+            <button class="ink-tool" type="button" data-tool="ring" aria-pressed="false" data-i18n="rings">Кольцо</button>
+            <button class="ink-tool" type="button" data-tool="comb" aria-pressed="false" data-i18n="comb">Гребень</button>
+          </div>
+        </div>
+
+        <div class="ink-row ink-row--inks" role="group" data-i18n-aria="inks" aria-label="Чернила">
+          <button class="ink-swatch is-active" type="button" id="ink-cycle" aria-pressed="true"
+                  data-i18n-aria="cycle" aria-label="Перебор цветов"></button>
+          <button class="ink-swatch" type="button" data-ink="0" aria-pressed="false" aria-label="Чернила 1"></button>
+          <button class="ink-swatch" type="button" data-ink="1" aria-pressed="false" aria-label="Чернила 2"></button>
+          <button class="ink-swatch" type="button" data-ink="2" aria-pressed="false" aria-label="Чернила 3"></button>
+          <button class="ink-swatch" type="button" data-ink="3" aria-pressed="false" aria-label="Чернила 4"></button>
+          <button class="ink-palette" type="button" id="palette" title="Сменить палитру">Traditional</button>
+        </div>
+
+        <div class="ink-row ink-row--sliders">
+          <label class="ink-slider">
+            <span data-i18n="flow">Плотность</span>
+            <input type="range" id="flow" min="0" max="0.4" step="0.01" value="0.14">
+          </label>
+          <label class="ink-slider">
+            <span data-i18n="curl">Закрутка</span>
+            <input type="range" id="curl" min="0" max="40" step="1" value="14">
+          </label>
+          <label class="ink-slider">
+            <span data-i18n="fade">Растворение</span>
+            <input type="range" id="fade" min="0" max="0.5" step="0.01" value="0.07">
+          </label>
+          <label class="ink-slider">
+            <span data-i18n="force">Сила</span>
+            <input type="range" id="force" min="0" max="11000" step="100" value="4800">
+          </label>
+        </div>
+
+        <div class="ink-row ink-actions">
+          <button class="ink-act" type="button" id="auto" aria-pressed="false" data-i18n="auto">Поток</button>
+          <button class="ink-act" type="button" id="wash" data-i18n="wash">Смыть</button>
+          <button class="ink-act" type="button" id="undo" disabled data-i18n="undo">Отменить</button>
+          <button class="ink-act ink-act--primary" type="button" id="save" data-i18n="save">Сохранить</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ink-fallback" id="ink-fallback" hidden>
+      <h2 id="ink-fallback-title">Вода не налилась</h2>
+      <p id="ink-fallback-text">Этой странице нужен WebGL 2 и видеокарта, которая умеет считать в половинной точности.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 :root {
   color-scheme: dark;
   --night: #061f30;
@@ -211,7 +211,7 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
 .med-disclaimer { max-width: 720px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid var(--line); color: rgba(185, 197, 196, .78); font-size: 13.5px; line-height: 1.62; }
 .primary-nav a[aria-current="page"] { color: var(--gold); }
 .primary-nav a[aria-current="page"]:hover { color: var(--ivory); }
-@media (min-width: 901px) and (max-width: 1180px) {
+@media (min-width: 901px) and (max-width: 1400px) {
   .site-header { padding: 0 clamp(16px, 2.4vw, 30px); }
   .primary-nav ul { gap: 12px; }
   .primary-nav a { font-size: 13px; }
