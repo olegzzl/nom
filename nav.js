@@ -54,14 +54,53 @@
     render(document.getElementById("nav-list"), {});
   }
 
+  /* Логотип в шапке: справа от NOM, ведёт на YouTube. */
+  var YOUTUBE = "https://www.youtube.com/@spokum";
+
+  function renderHeaderLogo() {
+    var header = document.querySelector(".site-header");
+    if (!header || header.querySelector(".brand-logo")) return;
+    var brand = header.querySelector(".brand");
+    if (!brand) return;
+
+    var group = document.createElement("div");
+    group.className = "brand-group";
+    brand.parentNode.insertBefore(group, brand);
+    group.append(brand);
+
+    var link = document.createElement("a");
+    link.className = "brand-logo";
+    link.href = YOUTUBE;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.title = "YouTube - @spokum";
+    link.setAttribute("aria-label", "YouTube - @spokum");
+
+    var img = document.createElement("img");
+    img.src = "assets/logo-your-mind.webp";
+    img.alt = "";
+    img.width = 48;
+    img.height = 48;
+    img.decoding = "async";
+
+    link.append(img);
+    group.append(link);
+  }
+
+  function boot() {
+    renderHeaderLogo();
+    renderSelf();
+  }
+
   global.NOMNav = { labels: LABELS, targets: TARGETS, items: items, render: render };
 
-  /* На статических страницах меню рисуется сразу после загрузки файла. */
-  if (!document.getElementById("meditations-content")) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", renderSelf);
-    } else {
-      renderSelf();
-    }
+  if (document.getElementById("nav-list")) {
+    /* список уже в разметке — рисуем сразу, чтобы обработчики страницы
+       нашли готовые ссылки */
+    boot();
+  } else if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
   }
 })(window);
