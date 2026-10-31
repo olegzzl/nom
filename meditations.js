@@ -1166,7 +1166,7 @@ document.querySelectorAll("[data-language]").forEach((button) => {
 let initialLanguage = "ru";
 try {
   const saved = localStorage.getItem("nom-language");
-  if (saved === "ru" || saved === "en") initialLanguage = saved;
+  if (saved === "ru" || saved === "en" || saved === "uk") initialLanguage = saved;
 } catch (_) { /* The default is Russian. */ }
 setLanguage(initialLanguage);
 
