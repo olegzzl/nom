@@ -19,12 +19,6 @@ const content = {
     title: "Медитации",
     lead: "Одиннадцать практик, которые можно делать дома: от даосской орбиты и буддийской метты до осознанной еды и медленной ходьбы.",
     indexTitle: "Содержание",
-    nav: [
-      { href: "index.html#practice", label: "О практике" },
-      { href: "index.html#mantra", label: "Мантра" },
-      { href: "meditations.html", label: "Медитации", current: true },
-        { href: "index.html#contact", label: "Контакты" }
-    ],
     howKicker: "Перед началом",
     howTitle: "Как выбрать практику",
     how: [
@@ -343,12 +337,6 @@ const content = {
     title: "Meditations",
     lead: "Eleven practices you can do at home, from the Taoist orbit and Buddhist metta to mindful eating and slow walking.",
     indexTitle: "Contents",
-    nav: [
-      { href: "index.html#practice", label: "The practice" },
-      { href: "index.html#mantra", label: "The mantra" },
-      { href: "meditations.html", label: "Meditations", current: true },
-        { href: "index.html#contact", label: "Contact" }
-    ],
     howKicker: "Before you begin",
     howTitle: "How to choose a practice",
     how: [
@@ -667,12 +655,6 @@ const content = {
     title: "Медитації",
     lead: "Одинадцять практик, які можна робити вдома: від даоської орбіти й буддійської метти до усвідомленого харчування та повільної ходьби.",
     indexTitle: "Зміст",
-    nav: [
-      { href: "index-uk.html#concept", label: "Про практику" },
-      { href: "index-uk.html#mantra", label: "Мантра" },
-      { href: "meditations.html", label: "Медитації", current: true },
-      { href: "index-uk.html#contact", label: "Контакти" }
-    ],
     howKicker: "Перед початком",
     howTitle: "Як вибрати практику",
     how: [
@@ -998,18 +980,11 @@ function closeMenu() {
   byId("primary-nav").classList.remove("is-open");
 }
 
-function renderNav(copy) {
+function renderNav() {
   const list = byId("nav-list");
-  list.replaceChildren();
-  copy.nav.forEach((item) => {
-    const li = create("li");
-    const a = create("a", "", item.label);
-    a.href = item.href;
-    if (item.current) a.setAttribute("aria-current", "page");
-    a.addEventListener("click", closeMenu);
-    li.append(a);
-    list.append(li);
-  });
+  if (!list || !window.NOMNav) return;
+  window.NOMNav.render(list, { lang: currentLanguage, fromMeditations: true });
+  list.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 }
 
 function renderIndex(copy) {
@@ -1141,7 +1116,7 @@ function setLanguage(lang) {
     button.setAttribute("aria-pressed", String(button.dataset.language === lang));
   });
 
-  renderNav(copy);
+  renderNav();
   renderIndex(copy);
   renderHow(copy);
   renderGroups(copy);
