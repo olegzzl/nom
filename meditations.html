@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061f30">
+  <meta name="description" content="Одиннадцать медитаций: микрокосмическая орбита, метта, мудхита, шаматха, випассана, чакры, дыхание позвоночника, шамбхави мудра и практики осознанности.">
+  <title>Медитации | Неоорбитальная медитация</title>
+  <link rel="icon" href="assets/neo-orbital-enso-header.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css?v=14">
+  <script src="meditations.js?v=1" defer></script>
+</head>
+<body class="page-meditations">
+  <a class="skip-link" id="skip" href="#meditations-content">Перейти к содержимому</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Neo Orbital Meditation, на главную">
+      <span>N</span><span class="brand-orbit">O</span><span>M</span>
+    </a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Основная навигация">
+      <ul id="nav-list"></ul>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Language / Язык">
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+        <button type="button" data-language="ru" aria-pressed="true">RU</button>
+      </div>
+      <nav class="social social--header" aria-label="Соцсети в шапке">
+        <a href="https://www.youtube.com/@spokum" target="_blank" rel="noopener noreferrer" title="YouTube - @spokum" aria-label="YouTube - @spokum"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+        <a href="https://www.facebook.com/spokum.space" target="_blank" rel="noopener noreferrer" title="Facebook - spokum.space" aria-label="Facebook - spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 20v-7.8h2.6l.4-3h-3V9.3c0-.9.25-1.5 1.55-1.5h1.65V5.1c-.3-.04-1.3-.13-2.45-.13-2.43 0-4.1 1.48-4.1 4.2v2.03H7v3h2.55V22h3.35Z"/></svg></a>
+        <a href="https://www.tiktok.com/@spokum.space" target="_blank" rel="noopener noreferrer" title="TikTok - @spokum.space" aria-label="TikTok - @spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.6 3h-2.7v12.2c0 1.2-.75 2-1.85 2-1 0-1.8-.7-1.8-1.7 0-1.1.9-1.7 2.1-1.5v-2.8c-2.8-.1-4.8 1.7-4.8 4.3 0 2.5 1.9 4.3 4.4 4.3 2.7 0 4.6-2 4.6-4.7V9.9c1 .6 2.1.9 3.3.8V8c-1.9-.3-3-1.7-3.3-3.6V3Z"/></svg></a>
+        <a href="https://www.instagram.com/spokum.space/" target="_blank" rel="noopener noreferrer" title="Instagram - spokum.space" aria-label="Instagram - spokum.space"><svg viewBox="0 0 24 24" style="fill:none" stroke="currentColor" stroke-width="1.9" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg></a>
+        </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="meditations-content">
+    <section class="med-hero" aria-labelledby="med-title">
+      <div class="med-hero-art" aria-hidden="true">
+        <img src="assets/neo-orbital-enso-header.webp" alt="" width="850" height="850">
+      </div>
+      <div class="med-hero-copy">
+        <p class="eyebrow" id="med-eyebrow">Практики</p>
+        <h1 id="med-title">Медитации</h1>
+        <p class="med-hero-lead" id="med-lead"></p>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <div class="page-content">
+      <section class="med-index-section" aria-labelledby="med-index-title">
+        <h2 class="med-index-title" id="med-index-title">Содержание</h2>
+        <ul class="med-index" id="med-index"></ul>
+      </section>
+
+      <section class="med-how" id="how" aria-labelledby="how-title">
+        <p class="section-kicker" id="how-kicker">Перед началом</p>
+        <h2 id="how-title">Как выбрать практику</h2>
+        <ul class="how-list" id="how-list"></ul>
+      </section>
+
+      <div id="med-groups"></div>
+
+      <section class="med-closing" aria-labelledby="closing-title">
+        <p class="section-kicker" id="closing-kicker">Темп</p>
+        <h2 id="closing-title">Практикуйте в своём ритме</h2>
+        <p class="lead" id="closing-text"></p>
+        <p class="med-disclaimer" id="med-disclaimer"></p>
+      </section>
+
+      <section class="manifest-section" id="contact" aria-labelledby="manifest-text">
+        <div class="manifest-banner">
+          <p class="manifest-text" id="manifest-text"></p>
+        </div>
+        <div class="contact-email-wrap">
+          <span class="contact-email-label">Email:</span>
+          <a class="contact-email-link" id="contact-email" href="mailto:olegzzl@zohomail.eu">olegzzl@zohomail.eu</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html" id="footer-brand">Неоорбитальная медитация</a>
+    <p class="footer-note" id="footer-note"></p>
+    <nav class="social social--footer" aria-label="Соцсети в подвале">
+      <a href="https://www.youtube.com/@spokum" target="_blank" rel="noopener noreferrer" title="YouTube - @spokum" aria-label="YouTube - @spokum"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2C22 15 22 12 22 12s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+      <a href="https://www.facebook.com/spokum.space" target="_blank" rel="noopener noreferrer" title="Facebook - spokum.space" aria-label="Facebook - spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.9 20v-7.8h2.6l.4-3h-3V9.3c0-.9.25-1.5 1.55-1.5h1.65V5.1c-.3-.04-1.3-.13-2.45-.13-2.43 0-4.1 1.48-4.1 4.2v2.03H7v3h2.55V22h3.35Z"/></svg></a>
+      <a href="https://www.tiktok.com/@spokum.space" target="_blank" rel="noopener noreferrer" title="TikTok - @spokum.space" aria-label="TikTok - @spokum.space"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.6 3h-2.7v12.2c0 1.2-.75 2-1.85 2-1 0-1.8-.7-1.8-1.7 0-1.1.9-1.7 2.1-1.5v-2.8c-2.8-.1-4.8 1.7-4.8 4.3 0 2.5 1.9 4.3 4.4 4.3 2.7 0 4.6-2 4.6-4.7V9.9c1 .6 2.1.9 3.3.8V8c-1.9-.3-3-1.7-3.3-3.6V3Z"/></svg></a>
+      <a href="https://www.instagram.com/spokum.space/" target="_blank" rel="noopener noreferrer" title="Instagram - spokum.space" aria-label="Instagram - spokum.space"><svg viewBox="0 0 24 24" style="fill:none" stroke="currentColor" stroke-width="1.9" aria-hidden="true" focusable="false"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg></a>
+      </nav>
+    <a class="back-to-top" href="#meditations-content" aria-label="Наверх">↑</a>
+  </footer>
+</body>
+</html>

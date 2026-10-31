@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500" role="img">
+<rect width="820" height="500" fill="#ffffff"/>
+<path d="M 410 86 A 172 172 0 0 0 410 430" fill="none" stroke="#a9853c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 410 430 A 172 172 0 0 0 410 86" fill="none" stroke="#0d3b57" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="10 8"/>
+<g transform="translate(269.1 159.3) rotate(35.0)"><path d="M -9 -10 L 9 -10 L 0 10 Z" fill="#a9853c"/></g>
+<g transform="translate(269.1 356.7) rotate(-35.0)"><path d="M -9 -10 L 9 -10 L 0 10 Z" fill="#a9853c"/></g>
+<g transform="translate(550.9 356.7) rotate(-145.0)"><path d="M -9 -10 L 9 -10 L 0 10 Z" fill="#0d3b57"/></g>
+<g transform="translate(550.9 159.3) rotate(-215.0)"><path d="M -9 -10 L 9 -10 L 0 10 Z" fill="#0d3b57"/></g>
+<circle cx="410" cy="86" r="9" fill="#ffffff" stroke="#a9853c" stroke-width="2.6"/>
+<circle cx="410" cy="430" r="9" fill="#ffffff" stroke="#a9853c" stroke-width="2.6"/>
+<text x="410" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#12303f" text-anchor="middle">макушка — начало и конец круга</text>
+<text x="410" y="470" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#12303f" text-anchor="middle">нижняя точка таза — разворот</text>
+<text x="204" y="244" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#12303f" text-anchor="end">вниз</text>
+<text x="204" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" font-style="italic" fill="#5f7079" text-anchor="end">по передней линии</text>
+<text x="616" y="244" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill="#12303f">вверх</text>
+<text x="616" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" font-style="italic" fill="#5f7079">по позвоночнику</text>
+<text x="410" y="266" font-family="Georgia, 'Times New Roman', serif" font-size="17" fill="#5f7079" text-anchor="middle">один круг</text>
+</svg>
