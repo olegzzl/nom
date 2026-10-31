@@ -1,20 +1,68 @@
-# Neo Orbital Meditation
+# Neo Orbital Meditation — сайт
 
-A standalone, responsive RU/EN version of the Neo Orbital Meditation website. It uses plain HTML, CSS and JavaScript and has no Wabi SDK or build-step dependency.
+Статический сайт практики: чистая вёрстка на HTML, CSS и JavaScript, без сборки и без зависимостей.
+Открывается двойным кликом по `index.html`, собирать ничего не нужно.
 
-## Pages
+## Где живёт
 
-- `index.html` - the main page: the practice, the mantra, benefits, about Oleg, approach and contact.
-- `meditations.html` - eleven guided practice descriptions (microcosmic orbit, metta, mudhita, shamatha, vipassana, chakras, spinal breathing, shambhavi mudra and three mindfulness practices), each with its own illustration in `assets/meditations/`.
+- Рабочая папка: `D:\Autoclaw work\NOM`
+- Git: ветка `main`, история правок в коммитах
+- Старые снимки сайта (до переделок): `D:\Autoclaw work\_backups` — в работе не участвуют
 
-Both pages share `styles.css` and the RU/EN language switch. Navigation is rendered by `script.js` on the main page and by `meditations.js` on the meditations page.
+## Файлы
 
-## Preview locally
+| Файл | Что это |
+|---|---|
+| `index.html` | главная, русская версия |
+| `index-en.html` | главная, английская |
+| `index-uk.html` | главная, украинская |
+| `meditations.html` | страница практик — одна на три языка, текст переключается скриптом |
+| `nav.js` | **шапка сайта: меню и логотип. Единственный источник** |
+| `meditations.js` | тексты страницы медитаций на ru/en/uk и её отрисовка |
+| `styles.css` | все стили сайта |
+| `assets/` | картинки: `meditations/` — 11 практик, `orbit/` — схемы техники, `logo-your-mind.webp` — логотип |
+| `script.js` | остался от прежней версии главной, текущими страницами не используется |
 
-Open `index.html` in a modern browser. The hero artwork is included in `assets/`, so the page does not need an internet connection for its main image. The language choice is saved in the browser when local storage is available.
+## Как устроена шапка
 
-## Publish with GitHub Pages
+Меню и логотип рисует `nav.js` — на всех четырёх страницах.
 
-The site files are in the repository root. In GitHub, open **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save. GitHub Pages will show the public site address when deployment finishes. No site has been published by this upload alone.
+**Чтобы изменить меню, правь только `nav.js`:**
 
-Contact: `olegzzl@zohomail.eu`
+- `LABELS` — подписи пунктов по языкам, порядок одинаковый;
+- `TARGETS` — куда ведёт каждый пункт.
+
+В HTML на месте меню стоит пустой `<ul id="nav-list"></ul>`, содержимое подставляется скриптом.
+Если добавишь пункт — добавь подпись во все три языка, иначе на других языках он покажется по-русски.
+
+Логотип (`assets/logo-your-mind.webp`) стоит справа от NOM и ведёт на канал YouTube. Вставляется тоже из `nav.js`, в HTML его нет.
+
+## Языки
+
+- Главная: три отдельных файла, переключатель — обычные ссылки.
+- Медитации: одна страница, язык переключают кнопки, выбор запоминается в браузере (`nom-language`).
+- Подписи для скринридеров на странице медитаций задаются в `meditations.js` (функция `setLanguage`).
+
+## Правила правок
+
+- Отступы и переводы строк: **LF**. Файлы с CRLF ломают диффы — git покажет изменённым весь файл.
+- После правки `styles.css` подними версию в ссылке: `styles.css?v=16` → `?v=17` в том HTML, где проверяешь. Иначе браузер покажет старый кэш.
+- Папки-бэкапы не создавать: история в git.
+- Коммит после каждой законченной правки:
+  `git -C "D:\Autoclaw work\NOM" add -A`
+  `git -C "D:\Autoclaw work\NOM" commit -m "что сделал"`
+- Откат: `git -C "D:\Autoclaw work\NOM" revert --no-edit HEAD` или `checkout` конкретного файла.
+
+## Проверка
+
+Открыть нужный `.html` в браузере. Если вёрстка выглядит старой — `Ctrl+F5`.
+Для проверки «как на телефоне» сузить окно до 400 px: меню сворачивается в бургер.
+
+## Что осталось незакрытым
+
+- Заголовок на странице медитаций («Медитации и техники успокоения») набран кеглем до 88 px и занимает 2–3 строки — стоит уменьшить в `.med-hero h1`.
+- Украинский перевод страницы медитаций сделан машинно и ждёт вычитки носителем (термины: «спорадість», «міжбрів'я», «Керуючий і Функціональний канали»).
+- Ссылка «О практике» ведёт на `#concept`; при желании — на `#intro` (светлый блок «Тишина в уме»).
+- `D:\Autoclaw work\Neo-Orbital-Meditation` — прежняя версия сайта со своим git и деплоем на Vercel; там висят незакоммиченные правки от 28.10.
+
+Контакт: `olegzzl@zohomail.eu`
