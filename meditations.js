@@ -9,14 +9,14 @@ const contact = {
 
 const content = {
   ru: {
-    metaTitle: "Медитации | Неоорбитальная медитация",
+    metaTitle: "Медитации и техники успокоения | Неоорбитальная медитация",
     metaDescription: "Одиннадцать медитаций: микрокосмическая орбита, метта, мудхита, шаматха, випассана, чакры, дыхание позвоночника, шамбхави мудра и практики осознанности.",
     skip: "Перейти к содержимому",
     menuOpen: "Открыть меню",
     menuClose: "Закрыть меню",
     top: "Наверх",
     eyebrow: "Практики",
-    title: "Медитации",
+    title: "Медитации и техники успокоения",
     lead: "Одиннадцать практик, которые можно делать дома: от даосской орбиты и буддийской метты до осознанной еды и медленной ходьбы.",
     indexTitle: "Содержание",
     howKicker: "Перед началом",
@@ -327,14 +327,14 @@ const content = {
     footerNote: "Практика тишины, внимания и контакта с телом."
   },
   en: {
-    metaTitle: "Meditations | Neo Orbital Meditation",
+    metaTitle: "Meditations and calming techniques | Neo Orbital Meditation",
     metaDescription: "Eleven meditations: the microcosmic orbit, metta, mudita, shamatha, vipassana, chakras, spinal breathing, shambhavi mudra and mindfulness practices.",
     skip: "Skip to content",
     menuOpen: "Open menu",
     menuClose: "Close menu",
     top: "Back to top",
     eyebrow: "Practices",
-    title: "Meditations",
+    title: "Meditations and calming techniques",
     lead: "Eleven practices you can do at home, from the Taoist orbit and Buddhist metta to mindful eating and slow walking.",
     indexTitle: "Contents",
     howKicker: "Before you begin",
@@ -645,14 +645,14 @@ const content = {
     footerNote: "A practice of quiet, attention and connection with the body."
   },
   uk: {
-    metaTitle: "Медитації | Неоорбітальна медитація",
+    metaTitle: "Медитації й техніки заспокоєння | Неоорбітальна медитація",
     metaDescription: "Одинадцять медитацій: мікрокосмічна орбіта, метта, мудіта, шаматха, віпассана, чакри, дихання хребта, шамбхаві мудра та практики усвідомленості.",
     skip: "Перейти до вмісту",
     menuOpen: "Відкрити меню",
     menuClose: "Закрити меню",
     top: "Догори",
     eyebrow: "Практики",
-    title: "Медитації",
+    title: "Медитації й техніки заспокоєння",
     lead: "Одинадцять практик, які можна робити вдома: від даоської орбіти й буддійської метти до усвідомленого харчування та повільної ходьби.",
     indexTitle: "Зміст",
     howKicker: "Перед початком",
