@@ -22,8 +22,7 @@ const content = {
       { href: "index.html#practice", label: "О практике" },
       { href: "index.html#mantra", label: "Мантра" },
       { href: "meditations.html", label: "Медитации", current: true },
-      { href: "index.html#author", label: "Об авторе" },
-      { href: "index.html#contact", label: "Контакты" }
+        { href: "index.html#contact", label: "Контакты" }
     ],
     howKicker: "Перед началом",
     howTitle: "Как выбрать практику",
@@ -347,8 +346,7 @@ const content = {
       { href: "index.html#practice", label: "The practice" },
       { href: "index.html#mantra", label: "The mantra" },
       { href: "meditations.html", label: "Meditations", current: true },
-      { href: "index.html#author", label: "About Oleg" },
-      { href: "index.html#contact", label: "Contact" }
+        { href: "index.html#contact", label: "Contact" }
     ],
     howKicker: "Before you begin",
     howTitle: "How to choose a practice",
