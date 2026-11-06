@@ -32,6 +32,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-
 .primary-nav a { display: inline-block; padding: 8px 2px; color: var(--muted); font-size: 14.5px; text-decoration: none; transition: color .2s ease; white-space: nowrap; }
 .primary-nav a:hover, .primary-nav a:focus-visible { color: var(--ivory); }
 .header-actions { justify-self: end; display: flex; flex: 0 0 auto; align-items: center; gap: 20px; }
+.header-tg { display: none; }
 .language-switch { display: flex; align-items: center; gap: 20px; }
 .language-switch button { position: relative; border: 0; padding: 8px 0; background: transparent; color: var(--muted); cursor: pointer; letter-spacing: .12em; }
 .language-switch button[aria-pressed="true"] { color: var(--ivory); }
@@ -88,11 +89,14 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
   .site-header { display: flex; justify-content: space-between; height: 76px; gap: 18px; padding: 0 22px; }
   .brand { justify-self: auto; font-size: 29px; }
   .brand-orbit { width: 39px; height: 39px; }
-  .primary-nav { justify-self: auto; display: none; position: absolute; top: 100%; right: 0; left: 0; margin: 0; padding: 8px 22px 22px; border-bottom: 1px solid var(--line); background: rgba(4,28,43,.99); }
+  .primary-nav { justify-self: auto; display: none; position: absolute; top: 100%; right: 0; left: 0; margin: 0; padding: 12px 24px 28px; border-bottom: 1px solid var(--line); background: rgba(4,28,43,.99); box-shadow: 0 20px 40px rgba(0,0,0,.6); }
   .primary-nav.is-open { display: block; }
   .primary-nav ul { display: grid; gap: 0; }
-  .primary-nav a { width: 100%; padding: 11px 3px; border-bottom: 1px solid rgba(209,187,126,.12); font-size: 16px; white-space: normal; }
+  .primary-nav a { width: 100%; padding: 18px 4px; border-bottom: 1px solid rgba(209,187,126,.14); font-size: 28px; line-height: 1.25; font-family: var(--serif); letter-spacing: -.01em; white-space: normal; }
   .header-actions { justify-self: auto; }
+  .header-tg { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(209, 187, 126, .35); border-radius: 50%; color: var(--gold); text-decoration: none; flex: 0 0 auto; transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+  .header-tg:hover, .header-tg:focus-visible { color: var(--ivory); border-color: var(--gold); background: rgba(209, 187, 126, .14); transform: translateY(-1px); }
+  .header-tg svg { display: block; width: 17px; height: 17px; fill: currentColor; }
   .menu-toggle { display: block; width: 48px; height: 48px; padding: 11px; }
   .menu-toggle span { margin: 5px 0; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
@@ -107,8 +111,12 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
   .site-header { height: 72px; padding: 0 16px; }
   .brand { font-size: 25px; }
   .brand-orbit { width: 35px; height: 35px; }
-  .header-actions { gap: 14px; }
-  .language-switch { gap: 14px; font-size: 15px; }
+  .header-actions { gap: 12px; }
+  .language-switch { gap: 12px; font-size: 15px; }
+  .header-tg { width: 34px; height: 34px; }
+  .header-tg svg { width: 16px; height: 16px; }
+  .primary-nav { padding: 10px 18px 24px; }
+  .primary-nav a { padding: 16px 2px; font-size: 25px; }
   .menu-toggle { width: 44px; height: 44px; padding: 9px; }
   .hero { min-height: auto; padding: 0 16px 32px; }
   .hero-art { width: 100%; }
