@@ -10,13 +10,13 @@
   /* Подписи пунктов. Порядок одинаковый во всех языках.
      Suminigashi не переводится: страница так называется на любом языке. */
   var LABELS = {
-    ru: ["О практике", "Техника", "Медитации и техники успокоения", "Suminigashi", "Контакты"],
-    en: ["The practice", "Technique", "Meditations and calming techniques", "Suminigashi", "Contact"],
-    uk: ["Про практику", "Техніка", "Медитації й техніки заспокоєння", "Suminigashi", "Контакти"]
+    ru: ["Главная", "Техника", "Медитации и техники успокоения", "Suminigashi", "Контакты"],
+    en: ["Home", "Technique", "Meditations and calming techniques", "Suminigashi", "Contact"],
+    uk: ["Головна", "Техніка", "Медитації й техніки заспокоєння", "Suminigashi", "Контакти"]
   };
 
   /* Куда ведёт каждый пункт: якорь на главной или отдельная страница. */
-  var TARGETS = ["#concept", "#technique", "meditations.html", "suminigashi.html", "#contact"];
+  var TARGETS = ["#top", "#technique", "meditations.html", "suminigashi.html", "#contact"];
 
   /* Текущая страница — по имени файла в адресе. На главной вернёт null. */
   function pageFile() {

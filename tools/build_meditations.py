@@ -35,7 +35,7 @@ LANG_FILES = [("ru", "meditations.html", "RU"), ("uk", "meditations-uk.html", "U
 # РїРѕСЂСЏРґРѕРє РєРЅРѕРїРѕРє РІ С€Р°РїРєРµ: СѓРєСЂР°РёРЅСЃРєР°СЏ, СЂСѓСЃСЃРєР°СЏ, Р°РЅРіР»РёР№СЃРєР°СЏ
 LANG_ORDER = ["ru", "uk", "en"]
 
-MENU_SCRIPT = """  <script src="nav.js"></script>
+MENU_SCRIPT = """  <script src="nav.js?v=2"></script>
   <script>
     (function () {
       var toggle = document.getElementById("menu-toggle");
