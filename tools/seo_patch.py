@@ -26,6 +26,7 @@ SITE_FILE = os.path.join(ROOT, "site.json")
 
 HEAD_START = "  <!-- seo:start -->"
 HEAD_END = "  <!-- seo:end -->"
+GOOGLE_VERIFICATION = "X3x_r4cE2_QVfyAKcidiihhfKGlvc1Is_DU5hhui4Nc"
 BODY_START = "      <!-- seo-content:start -->"
 BODY_END = "      <!-- seo-content:end -->"
 STYLE_VERSION = "20"
@@ -141,6 +142,7 @@ def head_block(page: dict, base: str) -> str:
     image = f"{base}/assets/og/{page['image']}"
     lines = [HEAD_START]
     lines.append('  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">')
+    lines.append(f'  <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">')
     lines.append(f'  <link rel="canonical" href="{url}">')
     for code, file in (("ru", "index.html"), ("uk", "index-uk.html"), ("en", "index-en.html")):
         lines.append(f'  <link rel="alternate" hreflang="{code}" href="{page_url(base, file)}">')
@@ -323,6 +325,7 @@ def patch_suminigashi(path: str, base: str) -> None:
     block = [
         HEAD_START,
         '  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">',
+        f'  <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">',
         f'  <link rel="canonical" href="{url}">',
         f'  <meta name="keywords" content="{attr("suminigashi, суминагаши, чернила на воде, медитативная практика, арт-медитация, успокоение")}">',
         '  <meta name="author" content="Neo Orbital Meditation">',

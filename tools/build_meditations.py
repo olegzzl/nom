@@ -320,6 +320,7 @@ def page(copy: dict, config: dict) -> str:
   <meta name="description" content="{attr(copy['meta']['description'])}">
 {keywords_meta}
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="google-site-verification" content="X3x_r4cE2_QVfyAKcidiihhfKGlvc1Is_DU5hhui4Nc">
   <link rel="icon" href="assets/neo-orbital-enso-header.webp" type="image/webp">
   <link rel="preload" href="assets/neo-orbital-enso-header.webp" as="image" type="image/webp">
 {meta_extra}
