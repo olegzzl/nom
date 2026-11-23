@@ -28,7 +28,7 @@ HEAD_START = "  <!-- seo:start -->"
 HEAD_END = "  <!-- seo:end -->"
 BODY_START = "      <!-- seo-content:start -->"
 BODY_END = "      <!-- seo-content:end -->"
-STYLE_VERSION = "19"
+STYLE_VERSION = "20"
 
 SOCIALS = [
     "https://www.youtube.com/@spokum",
