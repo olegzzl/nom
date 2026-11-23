@@ -16,16 +16,18 @@
 | `index.html` | главная, русская версия |
 | `index-en.html` | главная, английская |
 | `index-uk.html` | главная, украинская |
-| `meditations.html` | страница практик — одна на три языка, текст переключается скриптом |
+| `meditations.html` | страница практик, русская версия (статический HTML) |
+| `meditations-uk.html` | страница практик, украинская |
+| `meditations-en.html` | страница практик, английская |
 | `nav.js` | **шапка сайта: меню и логотип. Единственный источник** |
-| `meditations.js` | тексты страницы медитаций на ru/en/uk и её отрисовка |
+| `meditations.js` | старый рендер страницы медитаций; текущими страницами не используется, оставлен для истории |
 | `styles.css` | все стили сайта |
 | `assets/` | картинки: `meditations/` — 11 практик, `orbit/` — схемы техники, `logo-your-mind.webp` — логотип |
 | `script.js` | остался от прежней версии главной, текущими страницами не используется |
 
 ## Как устроена шапка
 
-Меню и логотип рисует `nav.js` — на всех четырёх страницах.
+Меню и логотип рисует `nav.js` — на всех страницах сайта.
 
 **Чтобы изменить меню, правь только `nav.js`:**
 
@@ -40,8 +42,16 @@
 ## Языки
 
 - Главная: три отдельных файла, переключатель — обычные ссылки.
-- Медитации: одна страница, язык переключают кнопки, выбор запоминается в браузере (`nom-language`).
-- Подписи для скринридеров на странице медитаций задаются в `meditations.js` (функция `setLanguage`).
+- Медитации: три отдельных статических файла (`meditations.html`, `meditations-uk.html`, `meditations-en.html`), переключатель — ссылки.
+- Тексты медитаций лежат в `content/ru.py`, `content/uk.py`, `content/en.py`; после правки запустите `python tools/build_all.py`.
+
+## SEO
+
+- Основной адрес задан в `site.json` → `base_url` (`https://neorbital.vercel.app`).
+- `python tools/build_all.py` собирает страницы медитаций, вставляет canonical, hreflang, Open Graph, Twitter Card и JSON-LD, обновляет `sitemap.xml`, `robots.txt` и `.nojekyll`.
+- `python tools/seo_check.py` проверяет заголовки, описания, canonical, взаимные hreflang, JSON-LD, H1, дубли id, alt у картинок, локальные ссылки и sitemap.
+- SEO-тексты главной (виды медитаций, сравнение с ТМ, FAQ) лежат в `content/home_seo.py`.
+- Микроразметка: Organization, WebSite, WebPage, CollectionPage, ItemList, BreadcrumbList, FAQPage.
 
 ## Правила правок
 
