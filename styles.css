@@ -444,3 +444,26 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
   .brand-logo img { width: 40px; height: 40px; }
   .contact-logo img { width: 88px; height: 88px; }
 }
+/* Первый экран: две кнопки в ряд */
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; }
+.hero-actions .hero-cta { margin-top: 34px; }
+.hero-cta--ghost { border-color: rgba(209, 187, 126, .45); background: none; box-shadow: none; }
+.hero-cta--ghost:hover { background: rgba(209, 187, 126, .12); }
+
+/* Кнопка подбора мантры в главе 04 */
+.mantra-cta { margin: 26px 0 0; }
+.mantra-cta .hero-cta { margin-top: 0; }
+
+/* Форма обратной связи */
+.contact-form { display: grid; gap: 10px; width: min(560px, 100%); margin: 30px auto 0; text-align: left; }
+.contact-form label { color: var(--gold); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.contact-form input,
+.contact-form textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 0; background: rgba(255, 255, 255, .02); color: var(--ivory); font: inherit; }
+.contact-form input:focus,
+.contact-form textarea:focus { outline: none; border-color: var(--gold); }
+.contact-form textarea { min-height: 132px; resize: vertical; }
+.contact-form .hero-cta { margin-top: 6px; justify-self: start; appearance: none; cursor: pointer; font: inherit; }
+.form-status { min-height: 20px; margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+
+/* Подвал: годы */
+.footer-copy { margin: 16px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .04em; }
