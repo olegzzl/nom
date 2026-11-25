@@ -1,6 +1,6 @@
 {
   "name": "Neo Orbital Meditation",
   "email": "olegzzl@zohomail.eu",
-  "base_url": "https://neorbital.vercel.app",
-  "note": "base_url: основной адрес сайта без слэша в конце. Используется для canonical, hreflang, абсолютных OG-адресов, JSON-LD и sitemap.xml. GitHub Pages (olegzzl.github.io/nom) считается дублем и канонизируется на этот домен. Если появится свой домен, поменяйте base_url и запустите python tools/build_all.py."
+  "base_url": "https://spokum.space",
+  "note": "base_url: основной адрес сайта без слэша в конце. Используется для canonical, hreflang, абсолютных OG-адресов, JSON-LD и sitemap.xml. GitHub Pages и прежний адрес Vercel считаются дублями и канонизируются на этот домен."
 }

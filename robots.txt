@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neorbital.vercel.app/sitemap.xml
+Sitemap: https://spokum.space/sitemap.xml

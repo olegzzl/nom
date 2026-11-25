@@ -28,7 +28,8 @@ PAGES = [
     "meditations-en.html",
     "suminigashi.html",
 ]
-BASE = "https://neorbital.vercel.app"
+with open(os.path.join(ROOT, "site.json"), "r", encoding="utf-8") as fh:
+    BASE = json.load(fh)["base_url"].rstrip("/")
 
 errors: list[str] = []
 warnings: list[str] = []
