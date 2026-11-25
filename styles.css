@@ -467,3 +467,34 @@ h2 { margin: 0 0 24px; color: var(--ivory); font-size: clamp(34px, 4.6vw, 58px);
 
 /* Подвал: годы */
 .footer-copy { margin: 16px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .04em; }
+
+/* Подвал: одна строка на ПК */
+@media (min-width: 901px) {
+  .site-footer { flex-wrap: nowrap; justify-content: flex-start; gap: 22px; }
+  .footer-brand,
+  .footer-note,
+  .footer-copy { margin: 0; font-family: inherit; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--muted); white-space: nowrap; text-decoration: none; }
+  .social--footer { margin-left: auto; }
+}
+
+/* Соцсети: фирменный кружок, белый логотип — как в оригиналах */
+.social a { background: #fff; border-color: #fff; }
+.social a svg { fill: #fff; }
+.social a[href*="youtube.com"] { background: #FF0000; border-color: #FF0000; }
+.social a[href*="facebook.com"] { background: #0866FF; border-color: #0866FF; }
+.social a[href*="tiktok.com"] { background: #000; border-color: #000; }
+.social a[href*="instagram.com"] { background: linear-gradient(45deg, #F58529, #DD2A7B 45%, #8134AF 72%, #515BD4); border-color: transparent; }
+.social a[href*="t.me"] { background: #26A5E4; border-color: #26A5E4; }
+.social a:hover,
+.social a:focus-visible { filter: brightness(1.12); border-color: rgba(255, 255, 255, .55); transform: translateY(-1px); }
+
+/* Телеграм-кнопка в шапке: голубой кружок, белый самолётик */
+.header-tg { background: #26A5E4; border-color: #26A5E4; color: #fff; }
+.header-tg:hover,
+.header-tg:focus-visible { background: #26A5E4; border-color: #26A5E4; color: #fff; box-shadow: 0 0 0 3px rgba(38, 165, 228, .25); transform: translateY(-1px); }
+
+/* Телеграм рядом с почтой: голубой кружок, белый самолётик */
+.contact-row { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.contact-tg { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #26A5E4; color: #fff; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.contact-tg svg { display: block; width: 19px; height: 19px; fill: currentColor; }
+.contact-tg:hover { transform: translateY(-1px); box-shadow: 0 0 0 3px rgba(38, 165, 228, .25); }
