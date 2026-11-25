@@ -29,7 +29,7 @@ HEAD_END = "  <!-- seo:end -->"
 GOOGLE_VERIFICATION = "X3x_r4cE2_QVfyAKcidiihhfKGlvc1Is_DU5hhui4Nc"
 BODY_START = "      <!-- seo-content:start -->"
 BODY_END = "      <!-- seo-content:end -->"
-STYLE_VERSION = "20"
+STYLE_VERSION = "21"
 
 SOCIALS = [
     "https://www.youtube.com/@spokum",
