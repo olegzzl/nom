@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://spokum.space/sitemap.xml
+Sitemap: https://www.spokum.space/sitemap.xml

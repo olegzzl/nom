@@ -47,7 +47,7 @@
 
 ## SEO
 
-- Основной адрес задан в `site.json` → `base_url` (`https://spokum.space`).
+- Основной адрес задан в `site.json` → `base_url` (`https://www.spokum.space`). Хост с `www` — основной: на Vercel `www` отдаёт сайт, `spokum.space` 308-редиректит на `www`. Меняете схему — меняйте `base_url` и пересобирайте.
 - `python tools/build_all.py` собирает страницы медитаций, вставляет canonical, hreflang, Open Graph, Twitter Card и JSON-LD, обновляет `sitemap.xml`, `robots.txt` и `.nojekyll`.
 - `python tools/seo_check.py` проверяет заголовки, описания, canonical, взаимные hreflang, JSON-LD, H1, дубли id, alt у картинок, локальные ссылки и sitemap.
 - SEO-тексты главной (виды медитаций, сравнение с ТМ, FAQ) лежат в `content/home_seo.py`.
