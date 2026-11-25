@@ -31,6 +31,12 @@ BODY_START = "      <!-- seo-content:start -->"
 BODY_END = "      <!-- seo-content:end -->"
 STYLE_VERSION = "21"
 
+SITE_NAME = {
+    "ru": "Твой спокойный ум",
+    "uk": "Твій спокійний розум",
+    "en": "Your Calm Mind",
+}
+
 SOCIALS = [
     "https://www.youtube.com/@spokum",
     "https://www.facebook.com/spokum.space",
@@ -67,11 +73,11 @@ def page_url(base: str, file: str) -> str:
     return f"{base}/{file}"
 
 
-def organization(base: str) -> dict:
+def organization(base: str, lang: str = "ru") -> dict:
     return {
         "@type": "Organization",
         "@id": base + "/#organization",
-        "name": "Neo Orbital Meditation",
+        "name": SITE_NAME.get(lang, SITE_NAME["ru"]),
         "alternateName": ["NOM", "Неоорбитальная медитация", "Неоорбітальна медитація"],
         "url": base + "/",
         "logo": {
@@ -83,12 +89,12 @@ def organization(base: str) -> dict:
     }
 
 
-def website(base: str) -> dict:
+def website(base: str, lang: str = "ru") -> dict:
     return {
         "@type": "WebSite",
         "@id": base + "/#website",
         "url": base + "/",
-        "name": "Neo Orbital Meditation",
+        "name": SITE_NAME.get(lang, SITE_NAME["ru"]),
         "alternateName": "NOM",
         "inLanguage": ["ru", "uk", "en"],
         "publisher": {"@id": base + "/#organization"},
@@ -148,11 +154,11 @@ def head_block(page: dict, base: str) -> str:
         lines.append(f'  <link rel="alternate" hreflang="{code}" href="{page_url(base, file)}">')
     lines.append(f'  <link rel="alternate" hreflang="x-default" href="{base}/">')
     lines.append(f'  <meta name="keywords" content="{attr(", ".join(page["keywords"]))}">')
-    lines.append('  <meta name="author" content="Neo Orbital Meditation">')
-    lines.append('  <meta name="publisher" content="Neo Orbital Meditation">')
+    lines.append(f"  <meta name=\"author\" content=\"{SITE_NAME[page['lang']]}\">")
+    lines.append(f"  <meta name=\"publisher\" content=\"{SITE_NAME[page['lang']]}\">")
     lines.append('  <meta name="color-scheme" content="dark">')
     lines.append('  <meta property="og:type" content="website">')
-    lines.append('  <meta property="og:site_name" content="Neo Orbital Meditation">')
+    lines.append(f"  <meta property=\"og:site_name\" content=\"{SITE_NAME[page['lang']]}\">")
     lines.append(f'  <meta property="og:locale" content="{page["locale"]}">')
     for code, locale in (("ru", "ru_RU"), ("uk", "uk_UA"), ("en", "en_US")):
         if code != page["lang"]:
@@ -170,7 +176,7 @@ def head_block(page: dict, base: str) -> str:
     lines.append(f'  <meta name="twitter:description" content="{attr(page["og_desc"])}">')
     lines.append(f'  <meta name="twitter:image" content="{image}">')
 
-    graph = [organization(base), website(base), web_page(page, base)]
+    graph = [organization(base, page["lang"]), website(base, page["lang"]), web_page(page, base)]
     if any(s["kind"] == "faq" for s in page["sections"]):
         graph.append(faq_node(page))
     data = {"@context": "https://schema.org", "@graph": graph}
@@ -300,8 +306,8 @@ def patch_suminigashi(path: str, base: str) -> None:
     url = base + "/suminigashi.html"
     image = base + "/assets/og/suminigashi-ru.jpg"
     graph = [
-        organization(base),
-        website(base),
+        organization(base, "ru"),
+        website(base, "ru"),
         {
             "@type": "WebPage",
             "@id": url + "#webpage",
@@ -328,9 +334,9 @@ def patch_suminigashi(path: str, base: str) -> None:
         f'  <meta name="google-site-verification" content="{GOOGLE_VERIFICATION}">',
         f'  <link rel="canonical" href="{url}">',
         f'  <meta name="keywords" content="{attr("suminigashi, суминагаши, чернила на воде, медитативная практика, арт-медитация, успокоение")}">',
-        '  <meta name="author" content="Neo Orbital Meditation">',
+        '  <meta name="author" content="Твой спокойный ум">',
         '  <meta property="og:type" content="website">',
-        '  <meta property="og:site_name" content="Neo Orbital Meditation">',
+        '  <meta property="og:site_name" content="Твой спокойный ум">',
         '  <meta property="og:locale" content="ru_RU">',
         '  <meta property="og:title" content="Suminigashi: чернила на воде">',
         '  <meta property="og:description" content="Интерактивная практика: проведите по поверхности, и краска поплывёт кольцами и волокнами.">',

@@ -200,7 +200,7 @@ def jsonld(copy: dict, config: dict, exercises: list[str]) -> str:
     organization = {
         "@type": "Organization",
         "@id": f"{base}/#organization" if base else "#organization",
-        "name": "Neo Orbital Meditation",
+        "name": copy["ui"]["footer_brand"],
         "alternateName": ["NOM", "Неоорбитальная медитация", "Неоорбітальна медитація"],
         "url": base + "/" if base else "",
         "logo": {"@type": "ImageObject", "url": f"{base}/assets/logo-your-mind.webp" if base else "assets/logo-your-mind.webp"},
@@ -217,7 +217,7 @@ def jsonld(copy: dict, config: dict, exercises: list[str]) -> str:
     website = {
         "@type": "WebSite",
         "@id": f"{base}/#website" if base else "#website",
-        "name": "Neo Orbital Meditation",
+        "name": copy["ui"]["footer_brand"],
         "inLanguage": ["ru", "uk", "en"],
     }
     if base:
@@ -325,7 +325,7 @@ def page(copy: dict, config: dict) -> str:
   <link rel="preload" href="assets/neo-orbital-enso-header.webp" as="image" type="image/webp">
 {meta_extra}
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Neo Orbital Meditation">
+  <meta property="og:site_name" content="{esc(ui['footer_brand'])}">
   <meta property="og:locale" content="{'ru_RU' if code == 'ru' else 'uk_UA' if code == 'uk' else 'en_US'}">
   <meta property="og:title" content="{attr(copy['meta']['og_title'])}">
   <meta property="og:description" content="{attr(copy['meta']['og_desc'])}">{og_url}
