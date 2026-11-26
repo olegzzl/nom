@@ -6,6 +6,17 @@
       "statusCode": 301
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "neorbital.vercel.app"
+        }
+      ],
+      "destination": "https://www.spokum.space/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
